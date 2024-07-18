@@ -15,7 +15,6 @@ const MainPage = () => {
 				<LinkButton text={"Create an Item"} href="/create-item" />
 				<LinkButton text={"Login"} href="/login" />
 				<LinkButton text={"Register"} href="/register" />
-				<Input />
 			</div>
 		</div>
 	);

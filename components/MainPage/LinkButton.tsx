@@ -4,7 +4,7 @@ const LinkButton = ({ href, text }: { href: string; text: string }) => {
 	return (
 		<a
 			href={href}
-			className="bg-indigo-100 text-neutral-700 font-semibold rounded-full py-1 w-full text-center"
+			className="bg-indigo-100 text-neutral-700 font-normal rounded-full py-1 w-full text-center"
 		>
 			{text}
 		</a>
