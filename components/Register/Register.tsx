@@ -10,12 +10,12 @@ const Register = () => {
 		password: "",
 	});
 
-	const handleChange = (e) => {
+	const handleChange = (e: any) => {
 		const { name, value } = e.target;
 		setForm((prevForm) => ({ ...prevForm, [name]: value }));
 	};
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 		try {
 			const response = await fetch("/api/register", {
@@ -34,9 +34,9 @@ const Register = () => {
 
 	return (
 		<div className="bg-indigo-400 h-screen w-[100vw] pt-[2vh] exo">
-			<div className="flex flex-col items-center justify-center gap-3 text-neutral-950 bg-white w-[94vw] p-4 mx-auto h-[96vh] rounded-[1rem]">
+			<div className="flex  flex-col items-center justify-center gap-3 text-neutral-950 bg-white w-[94vw] p-4 mx-auto h-[96vh] rounded-[1rem]">
 				<h2 className="text-[2rem] exo">Register</h2>
-				<form onSubmit={handleSubmit} className="w-full">
+				<form onSubmit={handleSubmit} className="w-full flex flex-col gap-2 ">
 					<Input
 						label="Name"
 						name="name"

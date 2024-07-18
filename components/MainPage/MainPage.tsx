@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import LinkButton from "./LinkButton";
 import Input from "../Inputs/Input";
+import { signOut } from "next-auth/react";
 
 const MainPage = () => {
 	return (
@@ -15,6 +17,9 @@ const MainPage = () => {
 				<LinkButton text={"Create an Item"} href="/create-item" />
 				<LinkButton text={"Login"} href="/login" />
 				<LinkButton text={"Register"} href="/register" />
+				<button className="" onClick={() => signOut()}>
+					Signout
+				</button>
 			</div>
 		</div>
 	);
