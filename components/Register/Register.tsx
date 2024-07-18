@@ -70,6 +70,12 @@ const Register = () => {
 						Register
 					</button>
 				</form>
+				<div className="mt-4 text-neutral-500 text-sm flex gap-2 text-center items-center justify-center mx-auto">
+					Already have an account?{" "}
+					<a href="/login" className="text-neutral-950">
+						Login
+					</a>
+				</div>
 			</div>
 		</div>
 	);

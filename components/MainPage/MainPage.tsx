@@ -17,7 +17,10 @@ const MainPage = () => {
 				<LinkButton text={"Create an Item"} href="/create-item" />
 				<LinkButton text={"Login"} href="/login" />
 				<LinkButton text={"Register"} href="/register" />
-				<button className="" onClick={() => signOut()}>
+				<button
+					onClick={() => signOut()}
+					className="bg-indigo-100 text-neutral-700 font-normal rounded-full py-1 w-full text-center"
+				>
 					Signout
 				</button>
 			</div>
