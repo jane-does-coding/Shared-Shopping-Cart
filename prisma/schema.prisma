@@ -10,9 +10,20 @@ datasource db {
 model User {
   id             String   @id @default(auto()) @map("_id") @db.ObjectId
   name           String
-  username       String   
+  username       String
   email          String   @unique
   hashedPassword String
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+  lists          List[]   @relation(fields: [listIds], references: [id])
+  listIds        String[] @db.ObjectId
+}
+
+model List {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  users    User[]   @relation(fields: [userIds], references: [id])
+  userIds  String[] @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
