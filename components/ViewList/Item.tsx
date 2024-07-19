@@ -79,7 +79,7 @@ const Item = ({ item }: any) => {
 					: "bg-neutral-100 border-2 border-neutral-200/25"
 			}`}
 		>
-			<div className="px-4">
+			<div className="px-1">
 				<h2
 					className={`${
 						item.isBought ? "text-neutral-700" : "text-neutral-900"
@@ -113,7 +113,7 @@ const Item = ({ item }: any) => {
 					))}
 				</div>
 			</div>
-			<div className="flex items-center justify-center gap-4 mr-4">
+			<div className="flex items-center justify-center gap-2">
 				<button
 					onClick={handleDelete}
 					className="p-2 rounded-full bg-red-300/25"
