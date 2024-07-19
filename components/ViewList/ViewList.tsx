@@ -9,7 +9,7 @@ const ViewList = ({ list }: { list: any }) => {
 				<h2 className="text-[2rem] exo">View List</h2>
 				<div className="w-full">
 					{list.items && list.items.length > 0 ? (
-						<div className="">
+						<div className="flex flex-col gap-2">
 							{list.items.map((item: any) => (
 								<>
 									{/* <div key={item.id} className="mb-3">

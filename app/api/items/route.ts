@@ -61,3 +61,31 @@ export async function POST(req: Request) {
 		);
 	}
 }
+
+export async function DELETE(req: any) {
+	const { id } = await req.json();
+	const currentUser = await getCurrentUser();
+
+	if (!currentUser) return;
+
+	try {
+		const deletedItem = await prisma.item.deleteMany({
+			where: {
+				id: id,
+				userId: currentUser.id,
+			},
+		});
+
+		if (deletedItem.count === 0) {
+			return NextResponse.json(
+				{ error: "Item not found or unauthorized" },
+				{ status: 404 }
+			);
+		}
+
+		return NextResponse.json({ message: "Item deleted successfully" });
+	} catch (error) {
+		console.error(error);
+		return NextResponse.error();
+	}
+}

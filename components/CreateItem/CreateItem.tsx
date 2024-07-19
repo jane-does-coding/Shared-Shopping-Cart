@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Input from "../Inputs/Input";
+import { useRouter } from "next/navigation";
 
 const CreateItem = ({ list }: { list: any }) => {
 	const [name, setName] = useState("");
@@ -8,6 +9,7 @@ const CreateItem = ({ list }: { list: any }) => {
 	const [store, setStore] = useState("");
 	const [note, setNote] = useState("");
 	const listId = list.id;
+	const router = useRouter();
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -35,6 +37,7 @@ const CreateItem = ({ list }: { list: any }) => {
 				setAmount("");
 				setStore("");
 				setNote("");
+				router.push("/");
 			} else {
 				console.error("Error creating item:", data.error);
 			}
