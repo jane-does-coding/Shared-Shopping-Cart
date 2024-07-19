@@ -18,6 +18,10 @@ export default async function getListById(listId: any) {
 			where: {
 				id: listId,
 			},
+			include: {
+				items: true,
+				users: true,
+			},
 		});
 
 		return list;
