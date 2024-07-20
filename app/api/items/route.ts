@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
 	try {
 		const body = await req.json();
-		const { name, amount, store, note, listId } = body;
+		const { name, amount, store, listId } = body;
 		const user = await getCurrentUser();
 
 		if (!user || !name || !amount || !store || !listId) {
@@ -20,7 +20,6 @@ export async function POST(req: Request) {
 				name,
 				amount,
 				store,
-				note,
 				user: {
 					connect: { id: user.id },
 				},

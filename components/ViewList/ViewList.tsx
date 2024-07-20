@@ -10,7 +10,7 @@ const ViewList = ({ list, users }: { list: any; users: any }) => {
 				<h2 className="text-[1.25rem] exo">Users:</h2>
 				<div className="flex gap-2">
 					{users.map((user: any) => (
-						<h2 className="px-6 py-1 bg-neutral-100 rounded-full">
+						<h2 className="px-6 py-1 bg-neutral-100 rounded-full" key={user.id}>
 							{user.username}
 						</h2>
 					))}
@@ -19,9 +19,9 @@ const ViewList = ({ list, users }: { list: any; users: any }) => {
 					{list.items && list.items.length > 0 ? (
 						<div className="flex flex-col gap-2">
 							{list.items.map((item: any) => (
-								<>
+								<div key={item.id}>
 									<Item item={item} />
-								</>
+								</div>
 							))}
 						</div>
 					) : (
