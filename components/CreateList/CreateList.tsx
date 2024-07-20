@@ -1,11 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import Input from "../Inputs/Input";
+import { useRouter } from "next/navigation";
 
 const CreateList = () => {
 	const [listName, setListName] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError]: any = useState(null);
+	const router = useRouter();
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -28,8 +30,8 @@ const CreateList = () => {
 			}
 
 			console.log("List created successfully:", data);
-			// Reset form or navigate to another page
 			setListName("");
+			router.push("/");
 		} catch (error) {
 			console.error("Error creating list:", error);
 			/* 			setError(error.message);
