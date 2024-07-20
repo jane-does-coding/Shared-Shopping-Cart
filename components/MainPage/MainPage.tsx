@@ -13,8 +13,11 @@ const MainPage = ({ currentUser, list }: any) => {
 					text={"Add people to your List"}
 					href="/add-people-to-list"
 				/>
-				<LinkButton text={"View List"} href={`/view-list/${list.id}`} />
+				{list && (
+					<LinkButton text={"View List"} href={`/view-list/${list.id}`} />
+				)}
 				<LinkButton text={"Create an Item"} href="/create-item" />
+				<LinkButton text={"View Profile"} href="/view-profile" />
 				<LinkButton text={"Login"} href="/login" />
 				<LinkButton text={"Register"} href="/register" />
 				<button

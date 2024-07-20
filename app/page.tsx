@@ -4,9 +4,13 @@ import getListById from "./actions/getListById";
 import getCurrentUser from "./actions/getCurrentUser";
 
 export default async function Home() {
-	const currentUser = await getCurrentUser();
+	const currentUser: any = await getCurrentUser();
+	let list;
 	/* there might not be a list */
-	const list = await getListById(currentUser?.listIds[0]);
+	if (currentUser?.listIds.length > 0) {
+		list = await getListById(currentUser?.listIds[0]);
+	} else {
+	}
 	/* 	console.log(list);
 	 */
 	return (
