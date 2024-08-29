@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "prisma generate && next build",
+		"build": "next build",
 		"start": "next start",
 		"lint": "next lint"
 	},
@@ -15,6 +15,7 @@
 		"framer-motion": "^11.3.7",
 		"next": "14.2.5",
 		"next-auth": "^4.24.7",
+		"prisma": "^5.19.0",
 		"react": "^18",
 		"react-dom": "^18",
 		"react-hot-toast": "^2.4.1",
