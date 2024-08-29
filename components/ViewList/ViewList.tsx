@@ -1,7 +1,7 @@
 import React from "react";
 import Item from "./Item";
 
-const ViewList = ({ list, users }: { list: any; users: any }) => {
+const ViewList = ({ list, users }: any) => {
 	console.log(list);
 	return (
 		<div className="bg-indigo-400 h-screen w-[100vw] pt-[2vh]">
