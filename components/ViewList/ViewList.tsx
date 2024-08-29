@@ -22,6 +22,7 @@ const ViewList = ({ list, users }: any) => {
 								<div key={item.id}>
 									<Item item={item} />
 								</div>
+								/* yup */
 							))}
 						</div>
 					) : (
